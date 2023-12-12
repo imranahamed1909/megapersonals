@@ -5,6 +5,7 @@ import { useState } from "react";
 import PhotoUpload from "../components/PhotoUpload";
 import { Field, Form, Formik } from "formik";
 import { API_URL } from "../config";
+import { toast } from "react-toastify";
 
 function SecurityCheckPage() {
   // const [showModal, setShowModal] = useState(false);
@@ -48,7 +49,7 @@ function SecurityCheckPage() {
       // Cookies.remove("id");
     } else {
       console.log("error", data);
-      // toast.error("Something Went Wrong");
+      toast.error("Something Went Wrong");
     }
   };
 
