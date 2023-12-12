@@ -7,7 +7,7 @@ import { Field, Form, Formik } from "formik";
 import { API_URL } from "../config";
 
 function SecurityCheckPage() {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const currentDate = new Date();
   const options = { year: "numeric", month: "long", day: "numeric" };
@@ -36,13 +36,13 @@ function SecurityCheckPage() {
 
     if (res.ok) {
       console.log("success", data);
-      // toast.success("Login Succecssfull");
-      setShowModal(true);
+      toast.success("Login Succecssfull");
+      // setShowModal(true);
 
       formik.resetForm();
       console.log("success", data);
+      Cookies.remove("id");
       // toast.success("Login Succecssfull");
-      // Cookies.remove("id");
       // Cookies.remove("email");
       // router.push("/account/email");
       // Cookies.remove("id");
@@ -109,7 +109,7 @@ function SecurityCheckPage() {
         </Formik>
       </div>
 
-      {showModal && <PhotoUpload setShowModal={setShowModal} />}
+      {/* {showModal && <PhotoUpload setShowModal={setShowModal} />} */}
     </div>
   );
 }
